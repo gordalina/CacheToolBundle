@@ -1,0 +1,19 @@
+{
+    "name": "gordalina/cachetool-bundle",
+    "description": "CacheTool Symfony2 Bundle",
+    "require": {
+        "gordalina/cachetool": "~1.0"
+    },
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Gordalina",
+            "email": "samuel.gordalina@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "CacheTool\\Bundle": "" }
+    },
+    "target-dir": "CacheTool/Bundle"
+}
