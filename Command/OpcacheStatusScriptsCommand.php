@@ -24,4 +24,16 @@ class OpcacheStatusScriptsCommand extends BaseOpcacheStatusScriptsCommand
 
         $this->setName('cachetool:opcache:status:scripts');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

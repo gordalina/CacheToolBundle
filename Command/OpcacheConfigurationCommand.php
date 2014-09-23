@@ -24,4 +24,16 @@ class OpcacheConfigurationCommand extends BaseOpcacheConfigurationCommand
 
         $this->setName('cachetool:opcache:configuration');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

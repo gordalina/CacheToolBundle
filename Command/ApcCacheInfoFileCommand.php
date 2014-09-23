@@ -24,4 +24,16 @@ class ApcCacheInfoFileCommand extends BaseApcCacheInfoFileCommand
 
         $this->setName('cachetool:apc:cache:info:file');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

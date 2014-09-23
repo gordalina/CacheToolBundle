@@ -24,4 +24,16 @@ class OpcacheResetCommand extends BaseOpcacheResetCommand
 
         $this->setName('cachetool:opcache:reset');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

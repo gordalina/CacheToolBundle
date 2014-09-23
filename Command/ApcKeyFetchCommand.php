@@ -24,4 +24,16 @@ class ApcKeyFetchCommand extends BaseApcKeyFetchCommand
 
         $this->setName('cachetool:apc:key:fetch');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

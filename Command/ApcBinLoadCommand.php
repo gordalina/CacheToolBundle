@@ -24,4 +24,16 @@ class ApcBinLoadCommand extends BaseApcBinLoadCommand
 
         $this->setName('cachetool:apc:bin:load');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }

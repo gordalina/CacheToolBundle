@@ -24,4 +24,16 @@ class OpcacheStatusCommand extends BaseOpcacheStatusCommand
 
         $this->setName('cachetool:opcache:status');
     }
+
+    /**
+     * @return ContainerInterface
+     */
+    protected function getContainer()
+    {
+        if (null === $this->container) {
+            $this->container = $this->getApplication()->getKernel()->getContainer();
+        }
+
+        return $this->container;
+    }
 }
