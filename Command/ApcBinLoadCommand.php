@@ -15,6 +15,8 @@ use CacheTool\Command\ApcBinLoadCommand as BaseApcBinLoadCommand;
 
 class ApcBinLoadCommand extends BaseApcBinLoadCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcBinLoadCommand extends BaseApcBinLoadCommand
         parent::configure();
 
         $this->setName('cachetool:apc:bin:load');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

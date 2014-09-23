@@ -15,6 +15,8 @@ use CacheTool\Command\ApcCacheInfoCommand as BaseApcCacheInfoCommand;
 
 class ApcCacheInfoCommand extends BaseApcCacheInfoCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcCacheInfoCommand extends BaseApcCacheInfoCommand
         parent::configure();
 
         $this->setName('cachetool:apc:cache:info');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

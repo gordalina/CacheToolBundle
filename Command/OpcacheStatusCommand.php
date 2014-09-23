@@ -15,6 +15,8 @@ use CacheTool\Command\OpcacheStatusCommand as BaseOpcacheStatusCommand;
 
 class OpcacheStatusCommand extends BaseOpcacheStatusCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class OpcacheStatusCommand extends BaseOpcacheStatusCommand
         parent::configure();
 
         $this->setName('cachetool:opcache:status');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

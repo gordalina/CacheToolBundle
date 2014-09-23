@@ -15,6 +15,8 @@ use CacheTool\Command\ApcKeyStoreCommand as BaseApcKeyStoreCommand;
 
 class ApcKeyStoreCommand extends BaseApcKeyStoreCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcKeyStoreCommand extends BaseApcKeyStoreCommand
         parent::configure();
 
         $this->setName('cachetool:apc:key:store');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

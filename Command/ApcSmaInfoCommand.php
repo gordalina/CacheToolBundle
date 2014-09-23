@@ -15,6 +15,8 @@ use CacheTool\Command\ApcSmaInfoCommand as BaseApcSmaInfoCommand;
 
 class ApcSmaInfoCommand extends BaseApcSmaInfoCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcSmaInfoCommand extends BaseApcSmaInfoCommand
         parent::configure();
 
         $this->setName('cachetool:apc:sma:info');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

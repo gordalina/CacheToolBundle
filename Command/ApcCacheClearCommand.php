@@ -15,6 +15,8 @@ use CacheTool\Command\ApcCacheClearCommand as BaseApcCacheClearCommand;
 
 class ApcCacheClearCommand extends BaseApcCacheClearCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcCacheClearCommand extends BaseApcCacheClearCommand
         parent::configure();
 
         $this->setName('cachetool:cache:clear:dump');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

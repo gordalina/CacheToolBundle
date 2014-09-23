@@ -15,6 +15,8 @@ use CacheTool\Command\OpcacheResetCommand as BaseOpcacheResetCommand;
 
 class OpcacheResetCommand extends BaseOpcacheResetCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class OpcacheResetCommand extends BaseOpcacheResetCommand
         parent::configure();
 
         $this->setName('cachetool:opcache:reset');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

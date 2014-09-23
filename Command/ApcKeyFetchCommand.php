@@ -15,6 +15,8 @@ use CacheTool\Command\ApcKeyFetchCommand as BaseApcKeyFetchCommand;
 
 class ApcKeyFetchCommand extends BaseApcKeyFetchCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcKeyFetchCommand extends BaseApcKeyFetchCommand
         parent::configure();
 
         $this->setName('cachetool:apc:key:fetch');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

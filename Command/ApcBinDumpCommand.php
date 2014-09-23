@@ -26,6 +26,14 @@ class ApcBinDumpCommand extends BaseApcBinDumpCommand
     }
 
     /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
+    }
+
+    /**
      * @return ContainerInterface
      */
     protected function getContainer()

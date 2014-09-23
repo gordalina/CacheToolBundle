@@ -15,6 +15,8 @@ use CacheTool\Command\ApcKeyExistsCommand as BaseApcKeyExistsCommand;
 
 class ApcKeyExistsCommand extends BaseApcKeyExistsCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcKeyExistsCommand extends BaseApcKeyExistsCommand
         parent::configure();
 
         $this->setName('cachetool:apc:key:exists');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

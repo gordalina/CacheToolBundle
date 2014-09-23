@@ -15,6 +15,8 @@ use CacheTool\Command\OpcacheConfigurationCommand as BaseOpcacheConfigurationCom
 
 class OpcacheConfigurationCommand extends BaseOpcacheConfigurationCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class OpcacheConfigurationCommand extends BaseOpcacheConfigurationCommand
         parent::configure();
 
         $this->setName('cachetool:opcache:configuration');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**

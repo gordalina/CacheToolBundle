@@ -15,6 +15,8 @@ use CacheTool\Command\ApcKeyDeleteCommand as BaseApcKeyDeleteCommand;
 
 class ApcKeyDeleteCommand extends BaseApcKeyDeleteCommand
 {
+    protected $container;
+
     /**
      * {@inheritdoc}
      */
@@ -23,6 +25,14 @@ class ApcKeyDeleteCommand extends BaseApcKeyDeleteCommand
         parent::configure();
 
         $this->setName('cachetool:apc:key:delete');
+    }
+
+    /**
+     * @return CacheTool
+     */
+    protected function getCacheTool()
+    {
+        return $this->getContainer()->get('cachetool');
     }
 
     /**
