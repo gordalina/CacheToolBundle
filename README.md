@@ -91,6 +91,7 @@ $cache = $container->get('cachetool');
 $cache->apc_clear_cache('both');
 // or
 $cache->opcache_reset();
+```
 
 ### Extending CacheTool
 
