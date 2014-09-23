@@ -9,8 +9,8 @@ parameters:
 services:
     cachetool:
         class: %cachetool.class%
-        arguments: [@cachetool.default_adapter]
         calls:
+            - [setAdapter, [@cachetool.default_adapter]]
             - [addProxy, [@cachetool.proxy.php]]
             - [addProxy, [@cachetool.proxy.apc]]
             - [addProxy, [@cachetool.proxy.opcache]]
