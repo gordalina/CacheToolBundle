@@ -6,21 +6,6 @@ parameters:
     cache_tool.proxy.apc.class: CacheTool\Proxy\ApcProxy
     cache_tool.proxy.opcache.class: CacheTool\Proxy\OpcacheProxy
 
-    cache_tool.command.apc_bin_dump.class: CacheTool\Command\ApcBinDumpCommand
-    cache_tool.command.apc_bin_load.class: CacheTool\Command\ApcBinLoadCommand
-    cache_tool.command.apc_cache_clear.class: CacheTool\Command\ApcCacheClearCommand
-    cache_tool.command.apc_cache_info.class: CacheTool\Command\ApcCacheInfoCommand
-    cache_tool.command.apc_cache_info_file.class: CacheTool\Command\ApcCacheInfoFileCommand
-    cache_tool.command.apc_key_delete.class: CacheTool\Command\ApcKeyDeleteCommand
-    cache_tool.command.apc_key_exists.class: CacheTool\Command\ApcKeyExistsCommand
-    cache_tool.command.apc_key_fetch.class: CacheTool\Command\ApcKeyFetchCommand
-    cache_tool.command.apc_key_store.class: CacheTool\Command\ApcKeyStoreCommand
-    cache_tool.command.apc_sma_info.class: CacheTool\Command\ApcSmaInfoCommand
-    cache_tool.command.opcache_configuration.class: CacheTool\Command\OpcacheConfigurationCommand
-    cache_tool.command.opcache_reset.class: CacheTool\Command\OpcacheResetCommand
-    cache_tool.command.opcache_status.class: CacheTool\Command\OpcacheStatusCommand
-    cache_tool.command.opcache_status_scripts.class: CacheTool\Command\OpcacheStatusScriptsCommand
-
 services:
     cache_tool:
         class: %cache_tool.class%
@@ -49,76 +34,3 @@ services:
 
     cache_tool.proxy.opcache:
         class: %cache_tool.proxy.opcache.class%
-
-    # commands
-
-    cache_tool.command.apc_bin_dump:
-        class: %cache_tool.command.apc_bin_dump.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_bin_load:
-        class: %cache_tool.command.apc_bin_load.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_cache_clear:
-        class: %cache_tool.command.apc_cache_clear.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_cache_info:
-        class: %cache_tool.command.apc_cache_info.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_cache_info_file:
-        class: %cache_tool.command.apc_cache_info_file.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_key_delete:
-        class: %cache_tool.command.apc_key_delete.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_key_exists:
-        class: %cache_tool.command.apc_key_exists.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_key_fetch:
-        class: %cache_tool.command.apc_key_fetch.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_key_store:
-        class: %cache_tool.command.apc_key_store.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.apc_sma_info:
-        class: %cache_tool.command.apc_sma_info.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.opcache_configuration:
-        class: %cache_tool.command.opcache_configuration.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.opcache_reset:
-        class: %cache_tool.command.opcache_reset.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.opcache_status:
-        class: %cache_tool.command.opcache_status.class%
-        tags:
-            - { name: console.command }
-
-    cache_tool.command.opcache_status_scripts:
-        class: %cache_tool.command.opcache_status_scripts.class%
-        tags:
-            - { name: console.command }
-
