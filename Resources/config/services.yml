@@ -1,36 +1,36 @@
 parameters:
-    cache_tool.class: CacheTool\CacheTool
-    cache_tool.adapter.cli.class: CacheTool\Adapter\Cli
-    cache_tool.adapter.fastcgi.class: CacheTool\Adapter\FastCGI
-    cache_tool.proxy.php.class: CacheTool\Proxy\PhpProxy
-    cache_tool.proxy.apc.class: CacheTool\Proxy\ApcProxy
-    cache_tool.proxy.opcache.class: CacheTool\Proxy\OpcacheProxy
+    cachetool.class: CacheTool\CacheTool
+    cachetool.adapter.cli.class: CacheTool\Adapter\Cli
+    cachetool.adapter.fastcgi.class: CacheTool\Adapter\FastCGI
+    cachetool.proxy.php.class: CacheTool\Proxy\PhpProxy
+    cachetool.proxy.apc.class: CacheTool\Proxy\ApcProxy
+    cachetool.proxy.opcache.class: CacheTool\Proxy\OpcacheProxy
 
 services:
-    cache_tool:
-        class: %cache_tool.class%
-        arguments: [@cache_tool.default_adapter]
+    cachetool:
+        class: %cachetool.class%
+        arguments: [@cachetool.default_adapter]
         calls:
-            - [addProxy, [@cache_tool.proxy.php]]
-            - [addProxy, [@cache_tool.proxy.apc]]
-            - [addProxy, [@cache_tool.proxy.opcache]]
+            - [addProxy, [@cachetool.proxy.php]]
+            - [addProxy, [@cachetool.proxy.apc]]
+            - [addProxy, [@cachetool.proxy.opcache]]
 
     # Adapters
 
-    cache_tool.adapter.cli:
-        class: %cache_tool.adapter.cli.class%
+    cachetool.adapter.cli:
+        class: %cachetool.adapter.cli.class%
 
-    cache_tool.adapter.fastcgi:
-        class: %cache_tool.adapter.fastcgi.class%
-        arguments: [%cache_tool.adapter.fastcgi.connection%]
+    cachetool.adapter.fastcgi:
+        class: %cachetool.adapter.fastcgi.class%
+        arguments: [%cachetool.adapter.fastcgi.connection%]
 
     # Proxies
 
-    cache_tool.proxy.php:
-        class: %cache_tool.proxy.php.class%
+    cachetool.proxy.php:
+        class: %cachetool.proxy.php.class%
 
-    cache_tool.proxy.apc:
-        class: %cache_tool.proxy.apc.class%
+    cachetool.proxy.apc:
+        class: %cachetool.proxy.apc.class%
 
-    cache_tool.proxy.opcache:
-        class: %cache_tool.proxy.opcache.class%
+    cachetool.proxy.opcache:
+        class: %cachetool.proxy.opcache.class%

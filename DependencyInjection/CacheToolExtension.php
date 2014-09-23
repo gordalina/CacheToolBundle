@@ -34,15 +34,15 @@ class CacheToolExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('cache_tool.adapter.fastcgi.connection', $config['fastcgi']);
+        $container->setParameter('cachetool.adapter.fastcgi.connection', $config['fastcgi']);
 
         switch ($config['adapter']) {
             case 'cli':
-                $container->setAlias('cache_tool.default_adapter', 'cache_tool.adapter.cli');
+                $container->setAlias('cachetool.default_adapter', 'cachetool.adapter.cli');
                 break;
 
             case 'fastcgi':
-                $container->setAlias('cache_tool.default_adapter', 'cache_tool.adapter.fastcgi');
+                $container->setAlias('cachetool.default_adapter', 'cachetool.adapter.fastcgi');
         }
     }
 }

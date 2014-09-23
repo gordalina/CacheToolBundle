@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('cache_tool');
+        $rootNode = $treeBuilder->root('cachetool');
 
         $rootNode
             ->children()
