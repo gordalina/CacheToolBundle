@@ -32,7 +32,7 @@ Enable the bundle's configuration in `app/config/config.yml`:
 
 ```yml
 # app/config/config.yml
-cachetool: ~
+cache_tool: ~
 ```
 
 Configuration
@@ -44,7 +44,7 @@ There are only two possible configurations
 
 ```yml
 # app/config/config.yml
-cachetool:
+cache_tool:
     adapter: cli
 ```
 
@@ -52,7 +52,7 @@ cachetool:
 
 ```yml
 # app/config/config.yml
-cachetool:
+cache_tool:
     adapter: fastcgi
     fastcgi: 127.0.0.1:900
 ```
