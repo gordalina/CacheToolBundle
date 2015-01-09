@@ -34,6 +34,7 @@ class CacheToolExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
+        $container->setParameter('cachetool.temp_dir', $config['temp_dir']);
         $container->setParameter('cachetool.adapter.fastcgi.connection', $config['fastcgi']);
 
         switch ($config['adapter']) {

@@ -9,6 +9,9 @@ parameters:
 services:
     cachetool:
         class: %cachetool.class%
+        arguments:
+            - %cachetool.temp_dir%
+            - @?logger
         calls:
             - [setAdapter, [@cachetool.default_adapter]]
             - [addProxy, [@cachetool.proxy.php]]

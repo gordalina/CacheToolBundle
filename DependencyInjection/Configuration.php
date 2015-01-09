@@ -41,6 +41,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('fastcgi')
                     ->defaultValue('127.0.0.1:9000')
                 ->end()
+                ->scalarNode('temp_dir')
+                    ->defaultValue(null)
+                ->end()
             ->end()
         ;
 
