@@ -24,7 +24,7 @@ class ApcCacheClearCommand extends BaseApcCacheClearCommand
     {
         parent::configure();
 
-        $this->setName('cachetool:cache:clear:dump');
+        $this->setName('cachetool:apc:cache:clear:dump');
     }
 
     /**
