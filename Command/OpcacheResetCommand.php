@@ -28,7 +28,7 @@ class OpcacheResetCommand extends BaseOpcacheResetCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

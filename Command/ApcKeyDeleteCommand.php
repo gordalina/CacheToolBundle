@@ -28,7 +28,7 @@ class ApcKeyDeleteCommand extends BaseApcKeyDeleteCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

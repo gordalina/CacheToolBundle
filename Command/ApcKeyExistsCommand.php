@@ -28,7 +28,7 @@ class ApcKeyExistsCommand extends BaseApcKeyExistsCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

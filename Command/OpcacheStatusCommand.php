@@ -28,7 +28,7 @@ class OpcacheStatusCommand extends BaseOpcacheStatusCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

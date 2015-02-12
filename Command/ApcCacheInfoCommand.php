@@ -28,7 +28,7 @@ class ApcCacheInfoCommand extends BaseApcCacheInfoCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

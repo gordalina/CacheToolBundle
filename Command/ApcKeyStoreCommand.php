@@ -28,7 +28,7 @@ class ApcKeyStoreCommand extends BaseApcKeyStoreCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {
