@@ -36,6 +36,8 @@ class CacheToolExtension extends Extension
 
         $container->setParameter('cachetool.temp_dir', $config['temp_dir']);
         $container->setParameter('cachetool.adapter.fastcgi.connection', $config['fastcgi']);
+        $container->setParameter('cachetool.apc', $config['apc']);
+        $container->setParameter('cachetool.opcache', $config['opcache']);
 
         switch ($config['adapter']) {
             case 'cli':
