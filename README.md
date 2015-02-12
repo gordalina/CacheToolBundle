@@ -38,9 +38,9 @@ cache_tool: ~
 Configuration
 -------------
 
-There are only two possible configurations
+There are two adapters
 
-1. Using CLI
+1. CLI
 
 ```yml
 # app/config/config.yml
@@ -48,7 +48,7 @@ cache_tool:
     adapter: cli
 ```
 
-2. Using FastCGI
+2. FastCGI
 
 ```yml
 # app/config/config.yml
@@ -58,6 +58,21 @@ cache_tool:
 ```
 
 You can also connect by socket replacing the above by: `/var/run/php5-fpm.sock`.
+
+If you don’t need apc or opcache you can disable it by setting it to false:
+
+```yml
+# app/config/config.yml
+cache_tool:
+    apc: false
+```
+
+```yml
+# app/config/config.yml
+cache_tool:
+    opcache: false
+```
+
 
 Usage
 -----
