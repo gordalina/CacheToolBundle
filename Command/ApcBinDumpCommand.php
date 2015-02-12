@@ -26,7 +26,7 @@ class ApcBinDumpCommand extends BaseApcBinDumpCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

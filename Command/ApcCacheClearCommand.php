@@ -28,7 +28,7 @@ class ApcCacheClearCommand extends BaseApcCacheClearCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

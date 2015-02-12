@@ -28,7 +28,7 @@ class ApcKeyFetchCommand extends BaseApcKeyFetchCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {

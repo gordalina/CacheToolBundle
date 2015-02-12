@@ -28,7 +28,7 @@ class ApcSmaInfoCommand extends BaseApcSmaInfoCommand
     }
 
     /**
-     * @return CacheTool
+     * @return \CacheTool\CacheTool
      */
     protected function getCacheTool()
     {
