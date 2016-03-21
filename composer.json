@@ -1,5 +1,5 @@
 {
-    "name": "tonicforhealth/cachetool-bundle",
+    "name": "gordalina/cachetool-bundle",
     "description": "CacheTool Symfony2 Bundle",
     "keywords": ["cache", "opcache", "apc", "symfony2", "bundle"],
     "require": {

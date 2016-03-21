@@ -36,7 +36,7 @@ class CacheClearerListener implements CacheClearerInterface
     {
         foreach ($this->cacheClearerCollection->toArray() as $clearer) {
             if ($clearer->isEnabled()) {
-                echo " \n" . "Clearing " . $clearer->getName();
+                echo "Clearing " . $clearer->getName() . " \n";
                 $clearer->clear();
             }
         }
