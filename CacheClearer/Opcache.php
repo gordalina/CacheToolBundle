@@ -57,4 +57,13 @@ class Opcache implements ClearerInterface
 
         return $status;
     }
+
+    /**
+     * Get name of the cache
+     * @return string
+     */
+    public function getName()
+    {
+        return 'Opcache';
+    }
 }
