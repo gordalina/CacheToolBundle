@@ -36,7 +36,7 @@ class CacheClearerListener implements CacheClearerInterface
     {
         foreach ($this->cacheClearerCollection->toArray() as $clearer) {
             if ($clearer->isEnabled()) {
-                echo "Clearing Opcache \n";
+                echo " \n" . "Clearing " . $clearer->getName();
                 $clearer->clear();
             }
         }
