@@ -6,7 +6,7 @@
  * Date: 3/21/16
  * Time: 2:17 PM
  */
-namespace CacheTool\Bundle\CacheClearer;
+namespace CacheTool\Bundle\CacheClearer\Clearer;
 
 use CacheTool\CacheTool;
 

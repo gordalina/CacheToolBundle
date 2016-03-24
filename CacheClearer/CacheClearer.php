@@ -6,8 +6,9 @@
  * Time: 2:31 PM
  */
 namespace CacheTool\Bundle\CacheClearer;
+use CacheTool\Bundle\CacheClearer\Clearer\ClearerInterface;
 
-class Collection
+class CacheClearer
 {
     /**
      * An array containing the entries of this collection.
@@ -31,10 +32,13 @@ class Collection
     }
 
     /**
-     * {@inheritdoc}
+     * Clears all enabled caches
      */
-    public function toArray()
-    {
-        return $this->elements;
+    public function clear(){
+        foreach ($this->elements as $clearer) {
+            if ($clearer->isEnabled()) {
+                $clearer->clear();
+            }
+        }
     }
 }

@@ -8,23 +8,23 @@
 namespace CacheTool\Bundle\Listener;
 
 use Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface;
-use CacheTool\Bundle\CacheClearer\Collection as CacheClearerCollection;
+use CacheTool\Bundle\CacheClearer\CacheClearer;
 
 class CacheClearerListener implements CacheClearerInterface
 {
     /**
      * @var CacheTool
      */
-    protected $cacheClearerCollection;
+    protected $cacheClearer;
 
     /**
      * CacheClearerListener constructor.
      *
-     * @param CacheClearerCollection $cacheClearerCollection
+     * @param CacheClearer $cacheClearer
      */
-    public function __construct(CacheClearerCollection $cacheClearerCollection)
+    public function __construct(CacheClearer $cacheClearer)
     {
-        $this->cacheClearerCollection = $cacheClearerCollection;
+        $this->cacheClearer = $cacheClearer;
     }
 
     /**
@@ -34,11 +34,6 @@ class CacheClearerListener implements CacheClearerInterface
      */
     public function clear($cacheDir)
     {
-        foreach ($this->cacheClearerCollection->toArray() as $clearer) {
-            if ($clearer->isEnabled()) {
-                echo "Clearing " . $clearer->getName() . " \n";
-                $clearer->clear();
-            }
-        }
+        $this->cacheClearer->clear();
     }
 }
