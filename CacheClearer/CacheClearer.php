@@ -6,6 +6,7 @@
  * Time: 2:31 PM
  */
 namespace CacheTool\Bundle\CacheClearer;
+use CacheTool\Bundle\CacheClearer\Clearer\ClearerInterface;
 
 class CacheClearer
 {
