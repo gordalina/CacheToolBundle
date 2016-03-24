@@ -7,7 +7,7 @@
  */
 namespace CacheTool\Bundle\Listener;
 
-use Symfony\Component\HttpKernel\CacheClearer\Clearer\CacheClearerInterface;
+use Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface;
 use CacheTool\Bundle\CacheClearer\CacheClearer;
 
 class CacheClearerListener implements CacheClearerInterface
