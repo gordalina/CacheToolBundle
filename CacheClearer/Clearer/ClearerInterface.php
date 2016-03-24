@@ -5,7 +5,7 @@
  * Date: 3/21/16
  * Time: 2:38 PM
  */
-namespace CacheTool\Bundle\CacheClearer;
+namespace CacheTool\Bundle\CacheClearer\Clearer;
 
 /**
  * Interface ClearerInterface

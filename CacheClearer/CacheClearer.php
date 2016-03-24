@@ -7,7 +7,7 @@
  */
 namespace CacheTool\Bundle\CacheClearer;
 
-class Collection
+class CacheClearer
 {
     /**
      * An array containing the entries of this collection.
@@ -31,10 +31,13 @@ class Collection
     }
 
     /**
-     * {@inheritdoc}
+     * Clears all enabled caches
      */
-    public function toArray()
-    {
-        return $this->elements;
+    public function clear(){
+        foreach ($this->elements as $clearer) {
+            if ($clearer->isEnabled()) {
+                $clearer->clear();
+            }
+        }
     }
 }
