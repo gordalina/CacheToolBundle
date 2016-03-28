@@ -17,8 +17,18 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application as FrameworkApplication;
 
+/**
+ * Class CacheToolBundle
+ * @package CacheTool\Bundle
+ */
 class CacheToolBundle extends Bundle
 {
+    /**
+     * Register bundle commands to the application
+     * @param Application $application
+     *
+     * @return void
+     */
     public function registerCommands(Application $application)
     {
         if (!$application instanceof FrameworkApplication) {

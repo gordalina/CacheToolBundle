@@ -1,0 +1,7 @@
+services:
+    cachetool_cache_clearer:
+        class: CacheTool\Bundle\Listener\CacheClearerListener
+        arguments:
+            - @cachetool.cache_clearer
+        tags:
+            - { name: kernel.cache_clearer }

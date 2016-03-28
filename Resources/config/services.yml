@@ -5,6 +5,8 @@ parameters:
     cachetool.proxy.php.class: CacheTool\Proxy\PhpProxy
     cachetool.proxy.apc.class: CacheTool\Proxy\ApcProxy
     cachetool.proxy.opcache.class: CacheTool\Proxy\OpcacheProxy
+    cachetool.cache_clearer.opcache.class: CacheTool\Bundle\CacheClearer\Clearer\Opcache
+    cachetool.cache_clearer.class: CacheTool\Bundle\CacheClearer\CacheClearer
 
 services:
     cachetool:
@@ -37,3 +39,18 @@ services:
 
     cachetool.proxy.opcache:
         class: %cachetool.proxy.opcache.class%
+
+    # Cache clearers
+
+    cachetool.cache_clearer.opcache:
+        class: %cachetool.cache_clearer.opcache.class%
+        arguments:
+           - @cachetool
+           - %cachetool.opcache%
+
+    cachetool.cache_clearer:
+        class: %cachetool.cache_clearer.class%
+        arguments:
+            - @cachetool.cache_clearer.opcache
+
+
