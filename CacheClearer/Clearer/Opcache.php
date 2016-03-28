@@ -39,7 +39,7 @@ class Opcache implements ClearerInterface
      */
     public function isEnabled()
     {
-        return ($this->opcacheEnabled && extension_loaded('Zend OPcache') && ini_get('opcache.enable') === '1') ? true : false;
+        return ($this->opcacheEnabled) ? true : false;
     }
 
     /**
@@ -52,7 +52,7 @@ class Opcache implements ClearerInterface
         $status = $this->cacheTool->opcache_reset();
 
         if (!$status) {
-            throw new \RuntimeException('opcache_reset(): No Opcache status info available.');
+            throw new \RuntimeException('opcache_reset(): No Opcache status info available. Probably opcache.enabled=0 in php.ini. Please disable opcache in your config.yml to avoid this exception');
         }
 
         return $status;
